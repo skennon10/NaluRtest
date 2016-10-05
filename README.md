@@ -5,11 +5,11 @@ Regression test suite for Nalu
 
 ## Preliminary building tasks
 
-Please proceed with following the build instructions under [Nalu.wiki](https://github.com/spdomin/Nalu/wiki/Build_instructions)
+Please proceed with following the build instructions under [Nalu.wiki](https://github.com/NaluCFD/Nalu/wiki/Build_instructions)
 
 The NaluRtest repository is cloned via,
 
-	git clone https://github.com/spdomin/NaluRtest.git
+	git clone https://github.com/NaluCFD/NaluRtest.git
 	
 ## Directions
 
