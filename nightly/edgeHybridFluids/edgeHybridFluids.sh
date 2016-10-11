@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 8 ../../naluX -i edgeHybridFluids.i -o edgeHybridFluids.log
+    mpiexec -np 8 ../../naluX -i edgeHybridFluids.i -o edgeHybridFluids.log
     determine_pass_fail $testTol "edgeHybridFluids.log" "edgeHybridFluids.norm" "edgeHybridFluids.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

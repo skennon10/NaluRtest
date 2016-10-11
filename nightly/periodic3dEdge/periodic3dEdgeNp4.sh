@@ -18,7 +18,7 @@ if [ -f $CWD/PASS_NP4 ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 4 ../../naluX -i periodic3dEdge.i -o periodic3dEdgeNp4.log
+    mpiexec -np 4 ../../naluX -i periodic3dEdge.i -o periodic3dEdgeNp4.log
     determine_pass_fail $testTol "periodic3dEdgeNp4.log" "periodic3dEdgeNp4.norm" "periodic3dEdgeNp4.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

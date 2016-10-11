@@ -23,7 +23,7 @@ if [ -f $CWD/PASS ]; then
     didSimulationDiffAnywhere=0
 else
     # run the first case
-    mpiexec --np 4 ../../naluX -i elemBackStepLRSST.i -o elemBackStepLRSST.log
+    mpiexec -np 4 ../../naluX -i elemBackStepLRSST.i -o elemBackStepLRSST.log
     determine_pass_fail $testTol "elemBackStepLRSST.log" "elemBackStepLRSST.norm" "elemBackStepLRSST.norm.gold"
     didSimulationDiffAnywhereFirst="$?"
     localDiffOne=$GlobalMaxSolutionDiff
@@ -32,7 +32,7 @@ else
     fi
 
     # run the second case
-    mpiexec --np 4 ../../naluX -i elemBackStepLRSST_Input.i -o elemBackStepLRSST_Input.log
+    mpiexec -np 4 ../../naluX -i elemBackStepLRSST_Input.i -o elemBackStepLRSST_Input.log
     determine_pass_fail $testTol "elemBackStepLRSST_Input.log" "elemBackStepLRSST_Input.norm" "elemBackStepLRSST_Input.norm.gold"
     didSimulationDiffAnywhereSecond="$?"
     localDiffTwo=$GlobalMaxSolutionDiff

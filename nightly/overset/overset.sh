@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 6 ../../naluX -i overset.i -o overset.log
+    mpiexec -np 6 ../../naluX -i overset.i -o overset.log
     determine_pass_fail $testTol "overset.log" "overset.norm" "overset.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

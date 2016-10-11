@@ -23,7 +23,7 @@ if [ -f $CWD/PASS ]; then
     didSimulationDiffAnywhere=0
 else
     # run the first case
-    mpiexec --np 2 ../../naluX -i variableDensNonUniform.i -o variableDensNonUniform.log
+    mpiexec -np 2 ../../naluX -i variableDensNonUniform.i -o variableDensNonUniform.log
     determine_pass_fail $testTol "variableDensNonUniform.log" "variableDensNonUniform.norm" "variableDensNonUniform.norm.gold"
     didSimulationDiffAnywhereFirst="$?"
     localDiffOne=$GlobalMaxSolutionDiff
@@ -32,7 +32,7 @@ else
     fi
 
     # run the second case
-    mpiexec --np 2 ../../naluX -i variableDensNonIso.i -o variableDensNonIso.log
+    mpiexec -np 2 ../../naluX -i variableDensNonIso.i -o variableDensNonIso.log
     determine_pass_fail $testTol "variableDensNonIso.log" "variableDensNonIso.norm" "variableDensNonIso.norm.gold"
     didSimulationDiffAnywhereSecond="$?"
     localDiffTwo=$GlobalMaxSolutionDiff

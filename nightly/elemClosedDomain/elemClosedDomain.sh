@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 2 ../../naluX -i elemClosedDomain.i -o elemClosedDomain.log
+    mpiexec -np 2 ../../naluX -i elemClosedDomain.i -o elemClosedDomain.log
     determine_pass_fail $testTol "elemClosedDomain.log" "elemClosedDomain.norm" "elemClosedDomain.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

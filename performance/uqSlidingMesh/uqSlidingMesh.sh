@@ -20,7 +20,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 8 ../../naluX -i uqSlidingMesh.i -o uqSlidingMesh.log
+    mpiexec -np 8 ../../naluX -i uqSlidingMesh.i -o uqSlidingMesh.log
     determine_pass_fail $testTol "uqSlidingMesh.log" "uqSlidingMesh.norm" "$theGoldNorm"
     didSimulationDiffAnywhere="$?"
 fi

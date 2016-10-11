@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 4 ../../naluX -i hdf5VarZChi.i -o hdf5VarZChi.log
+    mpiexec -np 4 ../../naluX -i hdf5VarZChi.i -o hdf5VarZChi.log
     determine_pass_fail $testTol "hdf5VarZChi.log" "hdf5VarZChi.norm" "hdf5VarZChi.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

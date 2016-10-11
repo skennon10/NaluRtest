@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 4 ../../naluX -i steadyTaylorVortex.i -o steadyTaylorVortex.log
+    mpiexec -np 4 ../../naluX -i steadyTaylorVortex.i -o steadyTaylorVortex.log
     determine_pass_fail $testTol "steadyTaylorVortex.log" "steadyTaylorVortex.norm" "steadyTaylorVortex.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi
