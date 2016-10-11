@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 2 ../../naluX -i hoVortex.i -o hoVortex.log
+    mpiexec -np 2 ../../naluX -i hoVortex.i -o hoVortex.log
     determine_pass_fail $testTol "hoVortex.log" "hoVortex.norm" "hoVortex.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

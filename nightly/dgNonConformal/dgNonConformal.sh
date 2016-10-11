@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 4 ../../naluX -i dgNonConformal.i -o dgNonConformal.log
+    mpiexec -np 4 ../../naluX -i dgNonConformal.i -o dgNonConformal.log
     determine_pass_fail $testTol "dgNonConformal.log" "dgNonConformal.norm" "dgNonConformal.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

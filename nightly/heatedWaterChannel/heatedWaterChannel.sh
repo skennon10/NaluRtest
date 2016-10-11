@@ -31,7 +31,7 @@ if [ -f $CWD/PASS ]; then
     didSimulationDiffAnywhere=0
 else
     # run the first
-    mpiexec --np 4 ../../naluX -i heatedWaterChannelEdge.i -o heatedWaterChannelEdge.log
+    mpiexec -np 4 ../../naluX -i heatedWaterChannelEdge.i -o heatedWaterChannelEdge.log
     determine_pass_fail $testTol "heatedWaterChannelEdge.log" "heatedWaterChannelEdge.norm" "$theGoldNormEdge"
     didSimulationDiffAnywhereFirst="$?"
     localDiffOne=$GlobalMaxSolutionDiff
@@ -40,7 +40,7 @@ else
     fi
 
     # run the second
-    mpiexec --np 4 ../../naluX -i heatedWaterChannelElem.i -o heatedWaterChannelElem.log
+    mpiexec -np 4 ../../naluX -i heatedWaterChannelElem.i -o heatedWaterChannelElem.log
     determine_pass_fail $testTol "heatedWaterChannelElem.log" "heatedWaterChannelElem.norm" "$theGoldNormElem"
     didSimulationDiffAnywhereSecond="$?"
     localDiffTwo=$GlobalMaxSolutionDiff
@@ -49,7 +49,7 @@ else
     fi
 
     # run the third
-    mpiexec --np 4 ../../naluX -i heatedWaterChannelEdgeRst.i -o heatedWaterChannelEdgeRst.log
+    mpiexec -np 4 ../../naluX -i heatedWaterChannelEdgeRst.i -o heatedWaterChannelEdgeRst.log
     determine_pass_fail $testTol "heatedWaterChannelEdgeRst.log" "heatedWaterChannelEdgeRst.norm" "$theGoldNormEdgeRst"
     didSimulationDiffAnywhereThird="$?"
     localDiffThree=$GlobalMaxSolutionDiff

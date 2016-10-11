@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 4 ../../naluX -i nonIsoNonUniformElemOpenJet.i -o nonIsoNonUniformElemOpenJet.log
+    mpiexec -np 4 ../../naluX -i nonIsoNonUniformElemOpenJet.i -o nonIsoNonUniformElemOpenJet.log
     determine_pass_fail $testTol "nonIsoNonUniformElemOpenJet.log" "nonIsoNonUniformElemOpenJet.norm" "nonIsoNonUniformElemOpenJet.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

@@ -23,7 +23,7 @@ if [ -f $CWD/PASS ]; then
     didSimulationDiffAnywhere=0
 else
     # run the first case
-    mpiexec --np 8 ../../naluX -i heliumPlumeEdge.i -o heliumPlumeEdge.log
+    mpiexec -np 8 ../../naluX -i heliumPlumeEdge.i -o heliumPlumeEdge.log
     determine_pass_fail $testTol "heliumPlumeEdge.log" "heliumPlumeEdge.norm" "heliumPlumeEdge.norm.gold"
     didSimulationDiffAnywhereFirst="$?"
     localDiffOne=$GlobalMaxSolutionDiff
@@ -32,7 +32,7 @@ else
     fi
 
     # run the second case
-    mpiexec --np 8 ../../naluX -i heliumPlumeElem_rst.i -o heliumPlumeElem_rst.log
+    mpiexec -np 8 ../../naluX -i heliumPlumeElem_rst.i -o heliumPlumeElem_rst.log
     determine_pass_fail $testTol "heliumPlumeElem_rst.log" "heliumPlumeElem_rst.norm" "heliumPlumeElem_rst.norm.gold"
     didSimulationDiffAnywhereSecond="$?"
     localDiffTwo=$GlobalMaxSolutionDiff

@@ -23,7 +23,7 @@ if [ -f $CWD/PASS ]; then
     didSimulationDiffAnywhere=0
 else
     # run the first case
-    mpiexec --np 2 ../../naluX -i ductWedge.i -o ductWedge.log
+    mpiexec -np 2 ../../naluX -i ductWedge.i -o ductWedge.log
     determine_pass_fail $testTol "ductWedge.log" "ductWedge.norm" "ductWedge.norm.gold"
     didSimulationDiffAnywhereFirst="$?"
     localDiffOne=$GlobalMaxSolutionDiff
@@ -32,7 +32,7 @@ else
     fi
 
     # run the second case
-    mpiexec --np 2 ../../naluX -i ductWedge_Input.i -o ductWedge_Input.log
+    mpiexec -np 2 ../../naluX -i ductWedge_Input.i -o ductWedge_Input.log
     determine_pass_fail $testTol "ductWedge_Input.log" "ductWedge_Input.norm" "ductWedge_Input.norm.gold"
     didSimulationDiffAnywhereSecond="$?"
     localDiffTwo=$GlobalMaxSolutionDiff

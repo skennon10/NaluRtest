@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 4 ../../naluX -i heatedBackStep.i -o heatedBackStep.log
+    mpiexec -np 4 ../../naluX -i heatedBackStep.i -o heatedBackStep.log
     determine_pass_fail $testTol "heatedBackStep.log" "heatedBackStep.norm" "heatedBackStep.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

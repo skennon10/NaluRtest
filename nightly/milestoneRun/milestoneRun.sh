@@ -18,7 +18,7 @@ if [ -f $CWD/PASS ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec --np 4 ../../naluX -i milestoneRun.i -o milestoneRun.log
+    mpiexec -np 4 ../../naluX -i milestoneRun.i -o milestoneRun.log
     determine_pass_fail $testTol "milestoneRun.log" "milestoneRun.norm" "milestoneRun.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi
