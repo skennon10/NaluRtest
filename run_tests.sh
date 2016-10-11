@@ -437,7 +437,7 @@ cp $NaluRtestCWD/nightly/heliumPlume/heliumPlumeElem_rst.norm.gold $baseGitHubCW
 ./heliumPlume.sh
 
 #=============================================================================
-# edgeContact3D test
+# edgeContact3D test (cylinder)
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/edgeContact3D" ]; then
     mkdir $baseGitHubCWD/runNaluRtest/nightly/edgeContact3D
@@ -446,11 +446,27 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/edgeContact3D
 cp $NaluRtestCWD/nightly/edgeContact3D/edgeContact3D.i $baseGitHubCWD/runNaluRtest/nightly/edgeContact3D
 cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/edgeContact3D
-cp $NaluRtestCWD/nightly/edgeContact3D/*.exo.* $baseGitHubCWD/runNaluRtest/nightly/edgeContact3D
+cp $NaluRtestCWD/mesh/rot_cyl_14.exo* $baseGitHubCWD/runNaluRtest/nightly/edgeContact3D
 cp $NaluRtestCWD/nightly/edgeContact3D/edgeContact3D.sh $baseGitHubCWD/runNaluRtest/nightly/edgeContact3D
 cp $NaluRtestCWD/nightly/edgeContact3D/edgeContact3D.norm.gold $baseGitHubCWD/runNaluRtest/nightly/edgeContact3D
 # run it...  
 ./edgeContact3D.sh
+
+#=============================================================================
+# dgNonConformalEdgeCylinder test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder
+cp $NaluRtestCWD/nightly/dgNonConformalEdgeCylinder/dgNonConformalEdgeCylinder.i $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder
+cp $NaluRtestCWD/mesh/rot_cyl_14.exo* $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder
+cp $NaluRtestCWD/nightly/dgNonConformalEdgeCylinder/dgNonConformalEdgeCylinder.sh $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder
+cp $NaluRtestCWD/nightly/dgNonConformalEdgeCylinder/dgNonConformalEdgeCylinder.norm.gold $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder
+# run it...  
+./dgNonConformalEdgeCylinder.sh
 
 #=============================================================================
 # fluidsPmrChtPeriodic test
