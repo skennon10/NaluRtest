@@ -751,4 +751,21 @@ cp $NaluRtestCWD/nightly/femHC/femHC.norm.gold $baseGitHubCWD/runNaluRtest/night
 # run it...
 ./femHC.sh
 
+#=============================================================================
+# ablUnstableEdge test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
+cp $NaluRtestCWD/nightly/ablUnstableEdge/ablUnstableEdge.i $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
+cp $NaluRtestCWD/nightly/ablUnstableEdge/*.g $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
+cp $NaluRtestCWD/nightly/ablUnstableEdge/ablUnstableEdge.sh $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
+cp $NaluRtestCWD/nightly/ablUnstableEdge/ablUnstableEdge.norm.gold $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
+
+# run it...  
+./ablUnstableEdge.sh
+
 echo "Rtest End"
