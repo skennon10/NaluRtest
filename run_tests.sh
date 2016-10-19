@@ -225,6 +225,22 @@ cp $NaluRtestCWD/nightly/dgNonConformal3dFluids/dgNonConformal3dFluids.norm.gold
 ./dgNonConformal3dFluids.sh
 
 #=============================================================================
+# dgNonConformal3dFluidsP1P2 test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsP1P2" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsP1P2
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsP1P2
+cp $NaluRtestCWD/nightly/dgNonConformal3dFluidsP1P2/dgNonConformal3dFluidsP1P2.i $baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsP1P2
+cp $NaluRtestCWD/nightly/dgNonConformal3dFluidsP1P2/*.g.* $baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsP1P2
+cp $NaluRtestCWD/xml/milestone.xml  $baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsP1P2
+cp $NaluRtestCWD/nightly/dgNonConformal3dFluidsP1P2/dgNonConformal3dFluidsP1P2.sh $baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsP1P2
+cp $NaluRtestCWD/nightly/dgNonConformal3dFluidsP1P2/dgNonConformal3dFluidsP1P2.norm.gold $baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsP1P2
+# run it...  
+./dgNonConformal3dFluidsP1P2.sh
+
+#=============================================================================
 # dgNonConformal3dFluidsHexTet test
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/dgNonConformal3dFluidsHexTet" ]; then
