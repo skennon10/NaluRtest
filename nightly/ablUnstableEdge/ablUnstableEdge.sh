@@ -5,7 +5,7 @@ CWD=$(pwd)
 didSimulationDiffAnywhere=0
 
 # determine tolerance
-testTol=0.00000001
+testTol=0.000000015
 platform=`uname`
 if [ "$platform" == 'Linux' ]; then
     testTol=0.0000000000000001
