@@ -34,9 +34,9 @@ fi
 # report it; 30 spaces
 GlobalPerformanceTime=`grep "STKPERF: Total Time" ablUnstableEdge.log  | awk '{print $4}'`
 if [ $PASS_STATUS -ne 1 ]; then
-    echo -e "..ablUnstableEdge................ FAILED":" " $GlobalPerformanceTime " s" " max diff: " $GlobalMaxSolutionDiff
+    echo -e "..ablUnstableEdge............. FAILED":" " $GlobalPerformanceTime " s" " max diff: " $GlobalMaxSolutionDiff
 else
-    echo -e "..ablUnstableEdge................ PASSED":" " $GlobalPerformanceTime " s"
+    echo -e "..ablUnstableEdge............. PASSED":" " $GlobalPerformanceTime " s"
 fi
 
 exit
