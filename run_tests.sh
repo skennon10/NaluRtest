@@ -760,7 +760,7 @@ fi
 
 cd $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
 cp $NaluRtestCWD/nightly/ablUnstableEdge/ablUnstableEdge.i $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
-cp $NaluRtestCWD/nightly/ablUnstableEdge/*.g $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
+cp $NaluRtestCWD/mesh/abl_1km_cube_toy.g $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
 cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
 cp $NaluRtestCWD/nightly/ablUnstableEdge/ablUnstableEdge.sh $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge
 cp $NaluRtestCWD/nightly/ablUnstableEdge/ablUnstableEdge.norm.gold $baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge

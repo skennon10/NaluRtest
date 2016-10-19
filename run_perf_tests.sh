@@ -73,6 +73,23 @@ cp $NaluRtestCWD/performance/uqSlidingMesh/uqSlidingMesh.norm.gold* $baseGitHubC
 # run it...  
 ./uqSlidingMesh.sh
 
+
+#=============================================================================
+# uqSlidingMeshDG test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG
+fi
+
+cd $baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG
+cp $NaluRtestCWD/performance/uqSlidingMeshDG/uqSlidingMeshDG.i $baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG
+cp $NaluRtestCWD/xml/milestone_aspect_ratio_smooth.xml $baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG
+cp $NaluRtestCWD/mesh/uqvawt_corrected.exo.* $baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG
+cp $NaluRtestCWD/performance/uqSlidingMeshDG/uqSlidingMeshDG.sh $baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG
+cp $NaluRtestCWD/performance/uqSlidingMeshDG/uqSlidingMeshDG.norm.gold* $baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG
+# run it...  
+./uqSlidingMeshDG.sh
+
 #=============================================================================
 # oversetHybrid test
 #=============================================================================
