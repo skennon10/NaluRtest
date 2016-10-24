@@ -25,16 +25,20 @@ if [ ! -f $NaluRtestCWD/NaluProjectPath.txt ]; then
     # copy executable for all tests to use
     if [ "$typeOfTesting" == "DEBUG" ]; then
         cp $baseGitHubCWD/Nalu/build_debug/naluXd $baseGitHubCWD/runNaluRtest/naluX
+        cp $baseGitHubCWD/Nalu/build_debug/unittestXd $baseGitHubCWD/runNaluRtest/unittestX
     else
         cp $baseGitHubCWD/Nalu/build/naluX $baseGitHubCWD/runNaluRtest/naluX
+        cp $baseGitHubCWD/Nalu/build/unittestX $baseGitHubCWD/runNaluRtest/unittestX
     fi
 else
     NaluProjectPathFile="$NaluRtestCWD/NaluProjectPath.txt"
     projectPathName=$(cat $NaluProjectPathFile)
     if [ "$typeOfTesting" == "DEBUG" ]; then
         cp $projectPathName/build_debug/naluXd $baseGitHubCWD/runNaluRtest/naluX
+        cp $projectPathName/build_debug/unittestXd $baseGitHubCWD/runNaluRtest/unittestX
     else
         cp $projectPathName/build/naluX $baseGitHubCWD/runNaluRtest/naluX
+        cp $projectPathName/build/unittestX $baseGitHubCWD/runNaluRtest/unittestX
     fi
 fi
 
@@ -783,5 +787,18 @@ cp $NaluRtestCWD/nightly/ablUnstableEdge/ablUnstableEdge.norm.gold $baseGitHubCW
 
 # run it...  
 ./ablUnstableEdge.sh
+
+#=============================================================================
+# unit tests
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/unitTests" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/unitTests
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/unitTests
+cp $NaluRtestCWD/nightly/unitTests/run_unit_tests.sh $baseGitHubCWD/runNaluRtest/nightly/unitTests
+
+# run it...  
+./run_unit_tests.sh
 
 echo "Rtest End"
