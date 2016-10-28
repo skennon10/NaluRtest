@@ -153,10 +153,6 @@ realms:
             convergence_tolerance: 1e-5
 
     material_properties:
-
-      target_name: block_10
-
-    material_properties:
       target_name: block_10
       specifications:
         - name: density
