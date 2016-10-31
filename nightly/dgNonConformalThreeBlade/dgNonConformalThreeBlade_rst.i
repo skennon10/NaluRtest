@@ -26,10 +26,9 @@ linear_solvers:
 realms:
 
   - name: realm_1
-    mesh: threeBladeMesh.g # MKS
+    mesh: dgNonConformalThreeBlade.rst
     use_edges: no       
     activate_aura: no
-    automatic_decomposition_type: rcb
    
     time_step_control:
      target_courant: 2.0
@@ -205,7 +204,7 @@ realms:
             current_normal: yes
 
     output:
-      output_data_base_name: dgNonConformalThreeBlade.e
+      output_data_base_name: dgNonConformalThreeBlade.e-s001
       output_frequency: 20
       output_node_set: no 
       output_variables:
@@ -215,15 +214,16 @@ realms:
        - mesh_displacement
 
     restart:
-      restart_data_base_name: dgNonConformalThreeBlade.rst
+      restart_data_base_name: dgNonConformalThreeBlade.rst-s001
       restart_frequency: 25
       restart_start: 25
+      restart_time: 0.0661995508335269 
 
 Time_Integrators:
   - StandardTimeIntegrator:
       name: ti_1
       start_time: 0
-      termination_step_count: 50
+      termination_step_count: 75 
       time_step: 0.001
       time_stepping_type: adaptive
       time_step_count: 0

@@ -269,10 +269,12 @@ fi
 
 cd $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalThreeBlade
 cp $NaluRtestCWD/nightly/dgNonConformalThreeBlade/dgNonConformalThreeBlade.i $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalThreeBlade
+cp $NaluRtestCWD/nightly/dgNonConformalThreeBlade/dgNonConformalThreeBlade_rst.i $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalThreeBlade
 cp $NaluRtestCWD/mesh/threeBladeMesh.g $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalThreeBlade
 cp $NaluRtestCWD/nightly/dgNonConformalThreeBlade/dgNonConformalThreeBlade.sh $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalThreeBlade
 cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalThreeBlade
 cp $NaluRtestCWD/nightly/dgNonConformalThreeBlade/dgNonConformalThreeBlade.norm.gold $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalThreeBlade
+cp $NaluRtestCWD/nightly/dgNonConformalThreeBlade/dgNonConformalThreeBlade_rst.norm.gold $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalThreeBlade
 # run it...  
 ./dgNonConformalThreeBlade.sh
 
