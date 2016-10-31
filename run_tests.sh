@@ -791,6 +791,23 @@ cp $NaluRtestCWD/nightly/ablUnstableEdge/ablUnstableEdge.norm.gold $baseGitHubCW
 ./ablUnstableEdge.sh
 
 #=============================================================================
+# ablStableElem test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/ablStableElem" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/ablStableElem
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/ablStableElem
+cp $NaluRtestCWD/nightly/ablStableElem/ablStableElem.i $baseGitHubCWD/runNaluRtest/nightly/ablStableElem
+cp $NaluRtestCWD/mesh/abl_1km_cube_toy.g $baseGitHubCWD/runNaluRtest/nightly/ablStableElem
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/ablStableElem
+cp $NaluRtestCWD/nightly/ablStableElem/ablStableElem.sh $baseGitHubCWD/runNaluRtest/nightly/ablStableElem
+cp $NaluRtestCWD/nightly/ablStableElem/ablStableElem.norm.gold $baseGitHubCWD/runNaluRtest/nightly/ablStableElem
+
+# run it...  
+./ablStableElem.sh
+
+#=============================================================================
 # unit tests
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/unitTests" ]; then
