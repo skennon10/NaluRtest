@@ -90,7 +90,6 @@ realms:
     - wall_boundary_condition: bc_cyliner
       target_name: surface_5
       wall_user_data:
-      wall_user_data:
         user_function_name:
          mesh_displacement: sinusoidal
         user_function_parameters:

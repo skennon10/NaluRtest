@@ -47,7 +47,6 @@ realms:
     - wall_boundary_condition: bc_pool
       target_name: surface_1
       wall_user_data:
-        temperature: 298.0
         transmissivity: 0.0
         emissivity: 0.8
         temperature: 500.0
