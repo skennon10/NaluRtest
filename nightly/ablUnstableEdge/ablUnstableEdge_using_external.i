@@ -27,15 +27,17 @@ transfers:
 
 # Fluid to ....
 
-  - name: xfer_fluid_io
+  - name: xfer_io_fluid
     type: geometric
-    realm_pair: [fluidRealm, ioRealm]
-    mesh_part_pair: [Front, block_101]
-    objective: input_output
+    realm_pair: [ioRealm, fluidRealm]
+    mesh_part_pair: [block_101, Front]
+    objective: external_data
     transfer_variables:
-      - [velocity, velocity_bc]
-      - [velocity, cont_velocity_bc]
-      - [temperature, temperature_bc]
+      - [velocity_bc, velocity_bc]
+      - [velocity_bc, velocity]
+      - [cont_velocity_bc, cont_velocity_bc]
+      - [temperature_bc, temperature_bc]
+      - [temperature_bc, temperature]
 
 realms:
 
@@ -108,12 +110,21 @@ realms:
 
     boundary_conditions:
 
-    - periodic_boundary_condition: bc_left_right
-      target_name: [Front, Back]
-      periodic_user_data:
-        search_tolerance: 0.0001
+    - inflow_boundary_condition: bc_inflow_front
+      target_name: Front
+      inflow_user_data:
+        velocity: [10.0,0,0]
+        temperature: 300.0
+        external_data: yes
 
-    - periodic_boundary_condition: bc_front_back
+    - open_boundary_condition: bc_open_back
+      target_name: Back
+      open_user_data:
+        velocity: [0.0,0,0]
+        pressure: 0.0
+        temperature: 300.0
+
+    - periodic_boundary_condition: bc_left_right
       target_name: [Left, Right]
       periodic_user_data:
         search_tolerance: 0.0001 
@@ -184,21 +195,22 @@ realms:
             momentum: [0.000135, 0.0, 0.0]
 
     output:
-      output_data_base_name: abl_1km_cube.e
+      output_data_base_name: abl_1km_cube_using_io.e
       output_frequency: 5
       output_node_set: no
       output_variables:
        - velocity
+       - velocity_bc
        - pressure
        - enthalpy
        - temperature
+       - temperature_bc
        - specific_heat
        - viscosity
 
   - name: ioRealm
-    mesh:  abl_io.g
-    type: input_output
-    automatic_decomposition_type: rcb
+    mesh: abl_io_results.e
+    type: external_field_provider
 
     field_registration:
       specifications:
@@ -218,13 +230,23 @@ realms:
           field_size: 1
           field_type: node_rank
 
+    solution_options:
+      name: myOptions
+      input_variables_interpolate_in_time: yes
+      input_variables_from_file_restoration_time: 0.0
+
+      options:    
+        - input_variables_from_file:
+            velocity_bc: velocity_bc
+            cont_velocity_bc: cont_velocity_bc
+            temperature_bc: temperature_bc
+
     output:
-      output_data_base_name: abl_io_results.e
+      output_data_base_name: io_io_results_check.e
       output_frequency: 1
       output_node_set: no
       output_variables:
        - velocity_bc
-       - cont_velocity_bc
        - temperature_bc
 
 Time_Integrators:
@@ -232,8 +254,8 @@ Time_Integrators:
       name: ti_1
       start_time: 0
       termination_step_count: 10
-      time_step: 0.5
-      time_stepping_type: fixed
+      time_step: 1.0
+      time_stepping_type: automatic 
       time_step_count: 0
       second_order_accuracy: yes
 
