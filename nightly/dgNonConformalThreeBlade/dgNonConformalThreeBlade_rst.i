@@ -8,7 +8,7 @@ linear_solvers:
   - name: solve_scalar
     type: tpetra
     method: gmres
-    preconditioner: sgs 
+    preconditioner: riluk 
     tolerance: 1e-5
     max_iterations: 50
     kspace: 50
