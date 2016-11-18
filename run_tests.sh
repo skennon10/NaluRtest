@@ -811,6 +811,23 @@ cp $NaluRtestCWD/nightly/ablStableElem/ablStableElem.norm.gold $baseGitHubCWD/ru
 ./ablStableElem.sh
 
 #=============================================================================
+# ekmanSpiral test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
+cp $NaluRtestCWD/nightly/ekmanSpiral/ekmanSpiral.i $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
+cp $NaluRtestCWD/mesh/ekmanSpiral.g $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
+cp $NaluRtestCWD/nightly/ekmanSpiral/ekmanSpiral.sh $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
+cp $NaluRtestCWD/nightly/ekmanSpiral/ekmanSpiral.norm.gold $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
+
+# run it...  
+./ekmanSpiral.sh
+
+#=============================================================================
 # unit tests
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/unitTests" ]; then
