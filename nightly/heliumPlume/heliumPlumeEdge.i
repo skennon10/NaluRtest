@@ -15,53 +15,15 @@ linear_solvers:
     output_level: 0
 
   - name: solve_cont
-    type: epetra
+    type: tpetra
     method: gmres
-    preconditioner: ML 
+    preconditioner: muelu
     tolerance: 1e-5
     max_iterations: 75
     kspace: 75
     output_level: 0
     recompute_preconditioner: false
-    ML_options_int:
-      - name: "coarse: max size"
-        value: 1000
-      - name: "repartition: enable"
-        value: 1
-      - name: "repartition: min per proc"
-        value: 1000
-      - name: "max levels"
-        value: 10
-      - name: "repartition: Zoltan dimensions"
-        value: 3
-      - name: "smoother: sweeps"
-        value: 2
-      - name: "eigen-analysis: iterations"
-        value: 15
-      - name: "ML output"
-        value: 0 
-      - name: "output"
-        value: 0 
-      - name: "repartition: start level"
-        value: 2
-    ML_options_real:
-      - name: "repartition: max min ratio"
-        value: 1.327
-      - name: "aggregation: damping factor"
-        value: 1.33333333
-      - name: "aggregation: threshold"
-        value: 0.02
-    ML_options_string:
-      - name: "aggregation: type"
-        value: "Uncoupled"
-      - name: "repartition: partitioner"
-        value: "Zoltan"
-      - name: "smoother: type"
-        value: "Chebyshev"
-      - name: "smoother: pre or post"
-        value: "both"
-      - name: "eigen-analysis: type"
-        value: "power-method"
+    muelu_xml_file_name: milestone.xml
 
   - name: solve_other
     type: tpetra

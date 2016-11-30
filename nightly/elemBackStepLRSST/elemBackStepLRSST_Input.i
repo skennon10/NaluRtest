@@ -15,13 +15,14 @@ linear_solvers:
     output_level: 0
 
   - name: solve_cont
-    type: epetra
+    type: tpetra
     method: gmres
-    preconditioner: ML 
+    preconditioner: muelu
     tolerance: 1e-3
     max_iterations: 50
     kspace: 50
     output_level: 0
+    muelu_xml_file_name: matches_ml_default.xml
 
 transfers:
 

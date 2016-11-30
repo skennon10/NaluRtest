@@ -15,18 +15,19 @@ linear_solvers:
     output_level: 0
 
   - name: solve_cont
-    type: epetra
-    method: gmres
-    preconditioner: ML
+    type: tpetra
+    method: cg
+    preconditioner: muelu
     tolerance: 1e-5
     max_iterations: 50
     kspace: 50
     output_level: 0
+    muelu_xml_file_name: matches_ml_default.xml
 
 realms:
 
   - name: realm_2
-    mesh: fluid.g
+    mesh: fluid_R1.g
     use_edges: no 
 
     equation_systems:

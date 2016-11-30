@@ -114,6 +114,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex
 cp $NaluRtestCWD/nightly/steadyTaylorVortex/steadyTaylorVortex.i $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex
 cp $NaluRtestCWD/nightly/steadyTaylorVortex/*.g.* $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex
 cp $NaluRtestCWD/nightly/steadyTaylorVortex/steadyTaylorVortex.sh $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex
 cp $NaluRtestCWD/nightly/steadyTaylorVortex/steadyTaylorVortex.norm.gold $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex
 # run it...  
@@ -129,6 +130,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/hoVortex
 cp $NaluRtestCWD/nightly/hoVortex/hoVortex.i $baseGitHubCWD/runNaluRtest/nightly/hoVortex
 cp $NaluRtestCWD/mesh/100x50_P2n.g.* $baseGitHubCWD/runNaluRtest/nightly/hoVortex
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/hoVortex
 cp $NaluRtestCWD/nightly/hoVortex/hoVortex.sh $baseGitHubCWD/runNaluRtest/nightly/hoVortex
 cp $NaluRtestCWD/nightly/hoVortex/hoVortex.norm.gold $baseGitHubCWD/runNaluRtest/nightly/hoVortex
 # run it...  
@@ -350,6 +352,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/movingCylinder
 cp $NaluRtestCWD/nightly/movingCylinder/movingCylinder.i $baseGitHubCWD/runNaluRtest/nightly/movingCylinder
 cp $NaluRtestCWD/nightly/movingCylinder/*.g.* $baseGitHubCWD/runNaluRtest/nightly/movingCylinder
+cp $NaluRtestCWD/xml/milestone_aspect_ratio.xml $baseGitHubCWD/runNaluRtest/nightly/movingCylinder
 cp $NaluRtestCWD/nightly/movingCylinder/movingCylinder.sh $baseGitHubCWD/runNaluRtest/nightly/movingCylinder
 cp $NaluRtestCWD/nightly/movingCylinder/movingCylinder.norm.gold $baseGitHubCWD/runNaluRtest/nightly/movingCylinder
 # run it...  
@@ -366,6 +369,7 @@ cd $baseGitHubCWD/runNaluRtest/nightly/elemBackStepLRSST
 cp $NaluRtestCWD/nightly/elemBackStepLRSST/elemBackStepLRSST.i $baseGitHubCWD/runNaluRtest/nightly/elemBackStepLRSST
 cp $NaluRtestCWD/nightly/elemBackStepLRSST/elemBackStepLRSST_Input.i $baseGitHubCWD/runNaluRtest/nightly/elemBackStepLRSST
 cp $NaluRtestCWD/nightly/elemBackStepLRSST/*.g.* $baseGitHubCWD/runNaluRtest/nightly/elemBackStepLRSST
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/elemBackStepLRSST
 cp $NaluRtestCWD/nightly/elemBackStepLRSST/elemBackStepLRSST.sh $baseGitHubCWD/runNaluRtest/nightly/elemBackStepLRSST
 cp $NaluRtestCWD/nightly/elemBackStepLRSST/elemBackStepLRSST.norm.gold $baseGitHubCWD/runNaluRtest/nightly/elemBackStepLRSST
 cp $NaluRtestCWD/nightly/elemBackStepLRSST/elemBackStepLRSST_Input.norm.gold $baseGitHubCWD/runNaluRtest/nightly/elemBackStepLRSST
@@ -418,6 +422,7 @@ cd $baseGitHubCWD/runNaluRtest/nightly/edgePipeCHT
 cp $NaluRtestCWD/nightly/edgePipeCHT/edgePipeCHT.i $baseGitHubCWD/runNaluRtest/nightly/edgePipeCHT
 cp $NaluRtestCWD/mesh/elbow.g.* $baseGitHubCWD/runNaluRtest/nightly/edgePipeCHT
 cp $NaluRtestCWD/mesh/horseshoe.g.* $baseGitHubCWD/runNaluRtest/nightly/edgePipeCHT
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/edgePipeCHT
 cp $NaluRtestCWD/nightly/edgePipeCHT/edgePipeCHT.sh $baseGitHubCWD/runNaluRtest/nightly/edgePipeCHT
 cp $NaluRtestCWD/nightly/edgePipeCHT/edgePipeCHT.norm.gold $baseGitHubCWD/runNaluRtest/nightly/edgePipeCHT
 # run it...  
@@ -435,6 +440,7 @@ cp $NaluRtestCWD/nightly/elemPipeCHT/elemPipeCHT.i $baseGitHubCWD/runNaluRtest/n
 cp $NaluRtestCWD/mesh/elbow.g.* $baseGitHubCWD/runNaluRtest/nightly/elemPipeCHT
 cp $NaluRtestCWD/mesh/horseshoe.g.* $baseGitHubCWD/runNaluRtest/nightly/elemPipeCHT
 cp $NaluRtestCWD/nightly/elemPipeCHT/elemPipeCHT.sh $baseGitHubCWD/runNaluRtest/nightly/elemPipeCHT
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/elemPipeCHT
 cp $NaluRtestCWD/nightly/elemPipeCHT/elemPipeCHT.norm.gold $baseGitHubCWD/runNaluRtest/nightly/elemPipeCHT
 # run it...  
 ./elemPipeCHT.sh
@@ -501,6 +507,7 @@ cd $baseGitHubCWD/runNaluRtest/nightly/fluidsPmrChtPeriodic
 cp $NaluRtestCWD/nightly/fluidsPmrChtPeriodic/fluidsPmrChtPeriodic.i $baseGitHubCWD/runNaluRtest/nightly/fluidsPmrChtPeriodic
 cp $NaluRtestCWD/nightly/fluidsPmrChtPeriodic/*.g.* $baseGitHubCWD/runNaluRtest/nightly/fluidsPmrChtPeriodic
 cp $NaluRtestCWD/nightly/fluidsPmrChtPeriodic/fluidsPmrChtPeriodic.sh $baseGitHubCWD/runNaluRtest/nightly/fluidsPmrChtPeriodic
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/fluidsPmrChtPeriodic
 cp $NaluRtestCWD/nightly/fluidsPmrChtPeriodic/fluidsPmrChtPeriodic.norm.gold $baseGitHubCWD/runNaluRtest/nightly/fluidsPmrChtPeriodic
 # run it...  
 ./fluidsPmrChtPeriodic.sh
@@ -515,6 +522,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/nonIsoElemOpenJet
 cp $NaluRtestCWD/nightly/nonIsoElemOpenJet/nonIsoElemOpenJet.i $baseGitHubCWD/runNaluRtest/nightly/nonIsoElemOpenJet
 cp $NaluRtestCWD/mesh/2cm_ped_35K_mks.g* $baseGitHubCWD/runNaluRtest/nightly/nonIsoElemOpenJet
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/nonIsoElemOpenJet
 cp $NaluRtestCWD/nightly/nonIsoElemOpenJet/nonIsoElemOpenJet.sh $baseGitHubCWD/runNaluRtest/nightly/nonIsoElemOpenJet
 cp $NaluRtestCWD/nightly/nonIsoElemOpenJet/nonIsoElemOpenJet.norm.gold $baseGitHubCWD/runNaluRtest/nightly/nonIsoElemOpenJet
 # run it...  
@@ -530,6 +538,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/nonIsoEdgeOpenJet
 cp $NaluRtestCWD/nightly/nonIsoEdgeOpenJet/nonIsoEdgeOpenJet.i $baseGitHubCWD/runNaluRtest/nightly/nonIsoEdgeOpenJet
 cp $NaluRtestCWD/mesh/2cm_ped_35K_mks.g* $baseGitHubCWD/runNaluRtest/nightly/nonIsoEdgeOpenJet
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/nonIsoEdgeOpenJet
 cp $NaluRtestCWD/nightly/nonIsoEdgeOpenJet/nonIsoEdgeOpenJet.sh $baseGitHubCWD/runNaluRtest/nightly/nonIsoEdgeOpenJet
 cp $NaluRtestCWD/nightly/nonIsoEdgeOpenJet/nonIsoEdgeOpenJet.norm.gold $baseGitHubCWD/runNaluRtest/nightly/nonIsoEdgeOpenJet
 # run it...  
@@ -562,6 +571,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluids
 cp $NaluRtestCWD/nightly/elemHybridFluids/elemHybridFluids.i $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluids
 cp $NaluRtestCWD/mesh/hybrid.g* $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluids
+cp $NaluRtestCWD/xml/milestone_aspect_ratio.xml $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluids
 cp $NaluRtestCWD/nightly/elemHybridFluids/elemHybridFluids.sh $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluids
 cp $NaluRtestCWD/nightly/elemHybridFluids/elemHybridFluids.norm.gold $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluids
 # run it...  
@@ -577,6 +587,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluidsShift
 cp $NaluRtestCWD/nightly/elemHybridFluidsShift/elemHybridFluidsShift.i $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluidsShift
 cp $NaluRtestCWD/mesh/hybrid.g* $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluidsShift
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluidsShift
 cp $NaluRtestCWD/nightly/elemHybridFluidsShift/elemHybridFluidsShift.sh $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluidsShift
 cp $NaluRtestCWD/nightly/elemHybridFluidsShift/elemHybridFluidsShift.norm.gold $baseGitHubCWD/runNaluRtest/nightly/elemHybridFluidsShift
 # run it...  
@@ -593,6 +604,7 @@ cd $baseGitHubCWD/runNaluRtest/nightly/edgeHybridFluids
 cp $NaluRtestCWD/nightly/edgeHybridFluids/edgeHybridFluids.i $baseGitHubCWD/runNaluRtest/nightly/edgeHybridFluids
 cp $NaluRtestCWD/mesh/hybrid.g* $baseGitHubCWD/runNaluRtest/nightly/edgeHybridFluids
 cp $NaluRtestCWD/nightly/edgeHybridFluids/edgeHybridFluids.sh $baseGitHubCWD/runNaluRtest/nightly/edgeHybridFluids
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/edgeHybridFluids
 cp $NaluRtestCWD/nightly/edgeHybridFluids/edgeHybridFluids.norm.gold $baseGitHubCWD/runNaluRtest/nightly/edgeHybridFluids
 # run it...  
 ./edgeHybridFluids.sh
@@ -607,6 +619,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/elemClosedDomain
 cp $NaluRtestCWD/nightly/elemClosedDomain/elemClosedDomain.i $baseGitHubCWD/runNaluRtest/nightly/elemClosedDomain
 cp $NaluRtestCWD/nightly/elemClosedDomain/*.g.* $baseGitHubCWD/runNaluRtest/nightly/elemClosedDomain
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/elemClosedDomain
 cp $NaluRtestCWD/nightly/elemClosedDomain/elemClosedDomain.sh $baseGitHubCWD/runNaluRtest/nightly/elemClosedDomain
 cp $NaluRtestCWD/nightly/elemClosedDomain/elemClosedDomain.norm.gold $baseGitHubCWD/runNaluRtest/nightly/elemClosedDomain
 # run it...  
@@ -622,6 +635,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/mixedTetPipe
 cp $NaluRtestCWD/nightly/mixedTetPipe/mixedTetPipe.i $baseGitHubCWD/runNaluRtest/nightly/mixedTetPipe
 cp $NaluRtestCWD/mesh/pipeTet.g* $baseGitHubCWD/runNaluRtest/nightly/mixedTetPipe
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/mixedTetPipe
 cp $NaluRtestCWD/nightly/mixedTetPipe/mixedTetPipe.sh $baseGitHubCWD/runNaluRtest/nightly/mixedTetPipe
 cp $NaluRtestCWD/nightly/mixedTetPipe/mixedTetPipe.norm.gold $baseGitHubCWD/runNaluRtest/nightly/mixedTetPipe
 # run it...  
@@ -667,6 +681,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformElemOpenJet
 cp $NaluRtestCWD/nightly/nonIsoNonUniformElemOpenJet/nonIsoNonUniformElemOpenJet.i $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformElemOpenJet
 cp $NaluRtestCWD/mesh/2cm_ped_35K_mks.g* $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformElemOpenJet
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformElemOpenJet
 cp $NaluRtestCWD/nightly/nonIsoNonUniformElemOpenJet/nonIsoNonUniformElemOpenJet.sh $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformElemOpenJet
 cp $NaluRtestCWD/nightly/nonIsoNonUniformElemOpenJet/nonIsoNonUniformElemOpenJet.norm.gold $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformElemOpenJet
 # run it...
@@ -682,6 +697,7 @@ fi
 cd $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformEdgeOpenJet
 cp $NaluRtestCWD/nightly/nonIsoNonUniformEdgeOpenJet/nonIsoNonUniformEdgeOpenJet.i $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformEdgeOpenJet
 cp $NaluRtestCWD/mesh/2cm_ped_35K_mks.g* $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformEdgeOpenJet
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformEdgeOpenJet
 cp $NaluRtestCWD/nightly/nonIsoNonUniformEdgeOpenJet/nonIsoNonUniformEdgeOpenJet.sh $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformEdgeOpenJet
 cp $NaluRtestCWD/nightly/nonIsoNonUniformEdgeOpenJet/nonIsoNonUniformEdgeOpenJet.norm.gold $baseGitHubCWD/runNaluRtest/nightly/nonIsoNonUniformEdgeOpenJet
 # run it...
