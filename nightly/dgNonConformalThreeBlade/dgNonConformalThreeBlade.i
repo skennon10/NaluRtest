@@ -195,7 +195,7 @@ realms:
             velocity: 0.0
 
         - element_source_terms:
-            momentum: NSO_KE_2ND
+            momentum: NSO_2ND_KE
             mixture_fraction: NSO_2ND_ALT
 
         - non_conformal:
