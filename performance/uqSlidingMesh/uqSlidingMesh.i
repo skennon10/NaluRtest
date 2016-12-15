@@ -98,13 +98,14 @@ realms:
       target_name: surface_3
       symmetry_user_data:
 
+
     - wall_boundary_condition: bc_wingT
       target_name: surface_4
       wall_user_data:
         user_function_name:
          velocity: wind_energy
-        user_function_parameters:
-         velocity: [1.0]
+        user_function_string_parameters:
+         velocity: [mmOne]
         use_wall_function: yes 
 
     - wall_boundary_condition: bc_wingL
@@ -112,18 +113,18 @@ realms:
       wall_user_data:
         user_function_name:
          velocity: wind_energy
+        user_function_string_parameters:
+         velocity: [mmOne]
         use_wall_function: yes 
-        user_function_parameters:
-         velocity: [1.0] 
 
     - wall_boundary_condition: bc_wingR
       target_name: surface_6
       wall_user_data:
-        user_function_parameters:
-         velocity: [1.0]
-        use_wall_function: yes 
         user_function_name:
          velocity: wind_energy
+        user_function_string_parameters:
+         velocity: [mmOne]
+        use_wall_function: yes 
 
     - contact_boundary_condition: bc_contI
       target_name: surface_7

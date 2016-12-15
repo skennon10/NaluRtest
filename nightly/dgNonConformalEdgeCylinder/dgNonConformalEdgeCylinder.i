@@ -78,6 +78,7 @@ realms:
         - name: mmOne
           target_name: [block_1, block_2, block_3, block_4, block_5, block_6, block_7, block_8]
           omega: 5.0
+          unit_vector: [0.0,0.0,1.0]
 
         - name: mmTwo
           target_name: [block_9, block_10, block_11, block_12, block_13, block_14, block_15, block_16, block_17, block_18, block_19]
@@ -124,8 +125,8 @@ realms:
       wall_user_data:
         user_function_name:
          velocity: wind_energy
-        user_function_parameters:
-         velocity: [5.0]
+        user_function_string_parameters:
+         velocity: [mmOne]
 
     - symmetry_boundary_condition: bc_4
       target_name: D_TopBott

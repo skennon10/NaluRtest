@@ -104,8 +104,8 @@ realms:
       wall_user_data:
         user_function_name:
          velocity: wind_energy
-        user_function_parameters:
-         velocity: [1.0]
+        user_function_string_parameters:
+         velocity: [mmOne]
         use_wall_function: yes 
 
     - wall_boundary_condition: bc_wingL
@@ -113,18 +113,18 @@ realms:
       wall_user_data:
         user_function_name:
          velocity: wind_energy
+        user_function_string_parameters:
+         velocity: [mmOne]
         use_wall_function: yes 
-        user_function_parameters:
-         velocity: [1.0] 
 
     - wall_boundary_condition: bc_wingR
       target_name: surface_6
       wall_user_data:
-        user_function_parameters:
-         velocity: [1.0]
-        use_wall_function: yes 
         user_function_name:
          velocity: wind_energy
+        user_function_string_parameters:
+         velocity: [mmOne]
+        use_wall_function: yes 
 
     - non_conformal_boundary_condition: bc_top_out_in
       target_name: [surface_7, surface_8]
@@ -146,6 +146,7 @@ realms:
         - name: mmOne
           target_name: [block_1, block_2, block_3, block_4, block_5]
           omega: 1.0
+          unit_vector: [0.0,0.0,1.0]
 
         - name: mmTwo
           target_name: [block_6, block_7]
