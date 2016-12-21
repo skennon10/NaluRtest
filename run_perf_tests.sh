@@ -58,23 +58,6 @@ cp $NaluRtestCWD/performance/waleElemXflowMixFrac3.5m/waleElemXflowMixFrac3.5m.n
 ./waleElemXflowMixFrac3.5m.sh
 
 #=============================================================================
-# uqSlidingMesh test
-#=============================================================================
-if [ ! -d "$baseGitHubCWD/runNaluRtest/performance/uqSlidingMesh" ]; then
-    mkdir $baseGitHubCWD/runNaluRtest/performance/uqSlidingMesh
-fi
-
-cd $baseGitHubCWD/runNaluRtest/performance/uqSlidingMesh
-cp $NaluRtestCWD/performance/uqSlidingMesh/uqSlidingMesh.i $baseGitHubCWD/runNaluRtest/performance/uqSlidingMesh
-cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/performance/uqSlidingMesh
-cp $NaluRtestCWD/mesh/uqvawt_corrected.exo.* $baseGitHubCWD/runNaluRtest/performance/uqSlidingMesh
-cp $NaluRtestCWD/performance/uqSlidingMesh/uqSlidingMesh.sh $baseGitHubCWD/runNaluRtest/performance/uqSlidingMesh
-cp $NaluRtestCWD/performance/uqSlidingMesh/uqSlidingMesh.norm.gold* $baseGitHubCWD/runNaluRtest/performance/uqSlidingMesh
-# run it...  
-./uqSlidingMesh.sh
-
-
-#=============================================================================
 # uqSlidingMeshDG test
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/performance/uqSlidingMeshDG" ]; then
