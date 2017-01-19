@@ -8,7 +8,7 @@ linear_solvers:
   - name: solve_scalar
     type: tpetra
     method: gmres
-    preconditioner: ilut 
+    preconditioner: sgs 
     tolerance: 1e-5
     max_iterations: 50
     kspace: 50
@@ -43,6 +43,9 @@ realms:
         pressure: solve_cont
         velocity: solve_scalar
         mixture_fraction: solve_scalar
+        dpdx: solve_scalar
+        duidx: solve_scalar
+        dzdx: solve_scalar
 
       systems:
         - LowMachEOM:
@@ -206,6 +209,11 @@ realms:
             algorithm_type: dg
             upwind_advection: no
             current_normal: yes
+
+        - consistent_mass_matrix_png:
+            pressure: yes
+            velocity: yes
+            mixture_fraction: yes
 
     output:
       output_data_base_name: dgNonConformalThreeBlade.e
