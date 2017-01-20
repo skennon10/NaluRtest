@@ -824,8 +824,21 @@ cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/ekmanSpir
 cp $NaluRtestCWD/nightly/ekmanSpiral/ekmanSpiral.sh $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
 cp $NaluRtestCWD/nightly/ekmanSpiral/ekmanSpiral.norm.gold $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
 
+#=============================================================================
+# dg MMS test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/dgMMS" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/dgMMS
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/dgMMS
+cp $NaluRtestCWD/nightly/dgMMS/dgMMS.i $baseGitHubCWD/runNaluRtest/nightly/dgMMS
+cp $NaluRtestCWD/nightly/dgMMS/*.g $baseGitHubCWD/runNaluRtest/nightly/dgMMS
+cp $NaluRtestCWD/nightly/dgMMS/dgMMS.sh $baseGitHubCWD/runNaluRtest/nightly/dgMMS
+cp $NaluRtestCWD/nightly/dgMMS/dgMMS.norm.gold $baseGitHubCWD/runNaluRtest/nightly/dgMMS
+
 # run it...  
-./ekmanSpiral.sh
+./dgMMS.sh
 
 #=============================================================================
 # unit tests

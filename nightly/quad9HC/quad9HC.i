@@ -26,7 +26,7 @@ realms:
   
       solver_system_specification:
         temperature: solve_scalar
-        dqdxCMM: solve_scalar
+        dtdx: solve_scalar
    
       systems:
         - HeatConduction:
@@ -90,7 +90,6 @@ realms:
        - dual_nodal_volume
        - temperature
        - dtdx
-       - dqdxCMM
 
     solution_norm:
       output_frequency: 1
