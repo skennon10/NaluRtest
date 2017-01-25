@@ -824,6 +824,26 @@ cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/ekmanSpir
 cp $NaluRtestCWD/nightly/ekmanSpiral/ekmanSpiral.sh $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
 cp $NaluRtestCWD/nightly/ekmanSpiral/ekmanSpiral.norm.gold $baseGitHubCWD/runNaluRtest/nightly/ekmanSpiral
 
+# run it...
+./ekmanSpiral.sh
+
+#=============================================================================
+# ABL Forcing Test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/ablForcingEdge" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/ablForcingEdge
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/ablForcingEdge
+cp $NaluRtestCWD/nightly/ablForcingEdge/ablForcingEdge.i $baseGitHubCWD/runNaluRtest/nightly/ablForcingEdge
+cp $NaluRtestCWD/nightly/ablForcingEdge/abl_1km_cube_sample.g $baseGitHubCWD/runNaluRtest/nightly/ablForcingEdge
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/ablForcingEdge
+cp $NaluRtestCWD/nightly/ablForcingEdge/ablForcingEdge.sh $baseGitHubCWD/runNaluRtest/nightly/ablForcingEdge
+cp $NaluRtestCWD/nightly/ablForcingEdge/ablForcingEdge.norm.gold $baseGitHubCWD/runNaluRtest/nightly/ablForcingEdge
+
+# run it...
+./ablForcingEdge.sh
+
 #=============================================================================
 # dg MMS test
 #=============================================================================
