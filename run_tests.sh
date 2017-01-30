@@ -774,6 +774,21 @@ cp $NaluRtestCWD/nightly/femHC/femHC.norm.gold $baseGitHubCWD/runNaluRtest/night
 ./femHC.sh
 
 #=============================================================================
+# cvfemHC test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/cvfemHC" ]; then
+mkdir $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
+cp $NaluRtestCWD/nightly/cvfemHC/cvfemHC.i $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
+cp $NaluRtestCWD/mesh/periodic3d.g $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
+cp $NaluRtestCWD/nightly/cvfemHC/cvfemHC.sh $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
+cp $NaluRtestCWD/nightly/cvfemHC/cvfemHC.norm.gold $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
+# run it...
+./cvfemHC.sh
+
+#=============================================================================
 # ablUnstableEdge test
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/ablUnstableEdge" ]; then

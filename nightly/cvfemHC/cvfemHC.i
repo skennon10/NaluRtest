@@ -36,10 +36,10 @@ realms:
 
     initial_conditions:
 
-      - constant: ic_1
-        target_name: block_1
-        value:
-         temperature: 10.0
+      - user_function: ic_1
+        target_name: [block_1]
+        user_function_name:
+         temperature: steady_3d_thermal
 
     material_properties:
       target_name: block_1
@@ -59,13 +59,38 @@ realms:
     - wall_boundary_condition: bc_left
       target_name: surface_1
       wall_user_data:
-        temperature: 20.0
+        user_function_name:
+         temperature: steady_3d_thermal
 
-
-    - wall_boundary_condition: bc_right
+    - wall_boundary_condition: bc_left
       target_name: surface_2
       wall_user_data:
-        temperature: 40.0
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - wall_boundary_condition: bc_left
+      target_name: surface_3
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - wall_boundary_condition: bc_left
+      target_name: surface_4
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - wall_boundary_condition: bc_left
+      target_name: surface_5
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - wall_boundary_condition: bc_left
+      target_name: surface_6
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
 
     solution_options:
       name: myOptions
@@ -75,21 +100,30 @@ realms:
       options:
  
       - element_source_terms:
-          temperature: FEM_DIFF
+          temperature: [CVFEM_DIFF, steady_3d_thermal]
 
     output:
-      output_data_base_name: femHC.e
+      output_data_base_name: cvfemHC.e
       output_frequency: 10
       output_node_set: no 
       output_variables:
        - dual_nodal_volume
        - temperature
 
+    solution_norm:
+      output_frequency: 5
+      file_name: cvfemHC.txt
+      spacing: 12
+      percision: 6
+      target_name: [block_1]
+      dof_user_function_pair:
+       - [temperature, steady_3d_thermal]
+
 Time_Integrators:
   - StandardTimeIntegrator:
       name: ti_1
       start_time: 0
-      termination_step_count: 25 
+      termination_step_count: 25
       time_step: 10.0 
       time_stepping_type: fixed
       time_step_count: 0
