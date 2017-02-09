@@ -18,7 +18,7 @@ if [ -f $CWD/PASS_NP1 ]; then
     # already ran this test
     didSimulationDiffAnywhere=0
 else
-    mpiexec -np 2 ../../naluX -i cvfemHC.i -o cvfemHC.log
+    mpiexec -np 8 ../../naluX -i cvfemHC.i -o cvfemHC.log
     determine_pass_fail $testTol "cvfemHC.log" "cvfemHC.norm" "cvfemHC.norm.gold"
     didSimulationDiffAnywhere="$?"
 fi

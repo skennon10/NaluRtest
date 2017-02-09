@@ -7,23 +7,22 @@ linear_solvers:
 
   - name: solve_scalar
     type: tpetra
-    method: gmres 
+    method: gmres
     preconditioner: sgs 
-    tolerance: 1e-3
-    max_iterations: 75 
-    kspace: 75 
+    tolerance: 1e-5
+    max_iterations: 50
+    kspace: 50
     output_level: 0
 
 realms:
 
   - name: realm_1
-    mesh: periodic3d.g
-    use_edges: no 
-    automatic_decomposition_type: rcb
+    mesh: rot_cyl_14.exo
+    use_edges: no
 
     equation_systems:
       name: theEqSys
-      max_iterations: 2 
+      max_iterations: 1 
   
       solver_system_specification:
         temperature: solve_scalar
@@ -35,14 +34,13 @@ realms:
             convergence_tolerance: 1e-5
 
     initial_conditions:
-
       - user_function: ic_1
-        target_name: [block_1]
+        target_name: [block_1, block_2, block_3, block_4, block_5, block_6, block_7, block_8, block_9, block_10, block_11, block_12, block_13, block_14, block_15, block_16, block_17, block_18, block_19]
         user_function_name:
          temperature: steady_3d_thermal
 
     material_properties:
-      target_name: block_1
+      target_name: [block_1, block_2, block_3, block_4, block_5, block_6, block_7, block_8, block_9, block_10, block_11, block_12, block_13, block_14, block_15, block_16, block_17, block_18, block_19]
       specifications:
         - name: density
           type: constant
@@ -54,44 +52,6 @@ realms:
           type: constant
           value: 1.0
 
-    boundary_conditions:
-
-    - wall_boundary_condition: bc_left
-      target_name: surface_1
-      wall_user_data:
-        user_function_name:
-         temperature: steady_3d_thermal
-
-    - wall_boundary_condition: bc_left
-      target_name: surface_2
-      wall_user_data:
-        user_function_name:
-         temperature: steady_3d_thermal
-
-    - wall_boundary_condition: bc_left
-      target_name: surface_3
-      wall_user_data:
-        user_function_name:
-         temperature: steady_3d_thermal
-
-    - wall_boundary_condition: bc_left
-      target_name: surface_4
-      wall_user_data:
-        user_function_name:
-         temperature: steady_3d_thermal
-
-    - wall_boundary_condition: bc_left
-      target_name: surface_5
-      wall_user_data:
-        user_function_name:
-         temperature: steady_3d_thermal
-
-    - wall_boundary_condition: bc_left
-      target_name: surface_6
-      wall_user_data:
-        user_function_name:
-         temperature: steady_3d_thermal
-
     solution_options:
       name: myOptions
 
@@ -99,35 +59,74 @@ realms:
 
       options:
  
+      - projected_nodal_gradient:
+          temperature: element
+
       - element_source_terms:
-          temperature: [CVFEM_DIFF, steady_3d_thermal]
+          temperature: [steady_3d_thermal, CVFEM_DIFF]
+
+    boundary_conditions:
+
+    - wall_boundary_condition: bc_1
+      target_name: A_Inflow
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - wall_boundary_condition: bc_1
+      target_name: B_Outflow
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - wall_boundary_condition: bc_3
+      target_name: C_Cylinder
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - wall_boundary_condition: bc_4
+      target_name: D_TopBott
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - wall_boundary_condition: bc_5
+      target_name: E_Sides
+      wall_user_data:
+        user_function_name:
+         temperature: steady_3d_thermal
+
+    - non_conformal_boundary_condition: bc_out_in
+      target_name: [G_outer, F_inner]
+      non_conformal_user_data:
+        expand_box_percentage: 15.0 
+        search_tolerance: 0.02
+
+    - non_conformal_boundary_condition: bc_in_out
+      target_name: [F_inner, G_outer]
+      non_conformal_user_data:
+        expand_box_percentage: 15.0 
+        search_tolerance: 0.02
 
     output:
       output_data_base_name: cvfemHC.e
-      output_frequency: 10
+      output_frequency: 25
       output_node_set: no 
       output_variables:
        - dual_nodal_volume
        - temperature
-
-    solution_norm:
-      output_frequency: 5
-      file_name: cvfemHC.txt
-      spacing: 12
-      percision: 6
-      target_name: [block_1]
-      dof_user_function_pair:
-       - [temperature, steady_3d_thermal]
+       - dtdx
 
 Time_Integrators:
   - StandardTimeIntegrator:
       name: ti_1
       start_time: 0
-      termination_step_count: 25
-      time_step: 10.0 
+      termination_time: 20.0e-3
+      time_step: 2.0e-3
       time_stepping_type: fixed
       time_step_count: 0
-      second_order_accuracy: no
+      second_order_accuracy: yes
 
       realms:
         - realm_1
