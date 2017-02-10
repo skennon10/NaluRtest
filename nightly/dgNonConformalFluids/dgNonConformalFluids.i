@@ -93,12 +93,14 @@ realms:
       symmetry_user_data:
 
     - non_conformal_boundary_condition: bc_in_out
-      target_name: [surface_5, surface_6]
+      current_target_name: surface_5
+      opposing_target_name: surface_6
       non_conformal_user_data:
         expand_box_percentage: 50.0 
 
     - non_conformal_boundary_condition: bc_out_in
-      target_name: [surface_6, surface_5]
+      current_target_name: surface_6
+      opposing_target_name: surface_5
       non_conformal_user_data:
         expand_box_percentage: 50.0 
 

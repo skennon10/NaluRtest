@@ -127,38 +127,16 @@ realms:
          velocity: [mmTop_ss7]
         mixture_fraction: 1.0
 
-    - non_conformal_boundary_condition: bc_front_in_out
-      target_name: [surface_8, surface_88]
+    - non_conformal_boundary_condition: bc_in_out
+      current_target_name: [surface_8, surface_9, surface_10]
+      opposing_target_name: [surface_88, surface_99, surface_1000]
       non_conformal_user_data:
         expand_box_percentage: 5.0 
         search_tolerance: 0.01 
 
-    - non_conformal_boundary_condition: bc_front_out_in
-      target_name: [surface_88, surface_8]
-      non_conformal_user_data:
-        expand_box_percentage: 5.0 
-        search_tolerance: 0.01 
-
-    - non_conformal_boundary_condition: bc_top_in_out
-      target_name: [surface_9, surface_99]
-      non_conformal_user_data:
-        expand_box_percentage: 5.0 
-        search_tolerance: 0.01 
-
-    - non_conformal_boundary_condition: bc_top_out_in
-      target_name: [surface_99, surface_9]
-      non_conformal_user_data:
-        expand_box_percentage: 5.0 
-        search_tolerance: 0.01 
-
-    - non_conformal_boundary_condition: bc_bot_in_out
-      target_name: [surface_10, surface_1000]
-      non_conformal_user_data:
-        expand_box_percentage: 5.0 
-        search_tolerance: 0.01 
-
-    - non_conformal_boundary_condition: bc_bot_out_in
-      target_name: [surface_1000, surface_10]
+    - non_conformal_boundary_condition: bc_out_in
+      current_target_name: [surface_88, surface_99, surface_1000]
+      opposing_target_name: [surface_8, surface_9, surface_10]
       non_conformal_user_data:
         expand_box_percentage: 5.0 
         search_tolerance: 0.01 
