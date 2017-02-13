@@ -115,7 +115,6 @@ realms:
 
         - non_conformal:
             gauss_labatto_quadrature: no
-            algorithm_type: dg
             upwind_advection: yes
  
     output:

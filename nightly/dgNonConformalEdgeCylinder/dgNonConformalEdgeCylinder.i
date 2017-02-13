@@ -104,7 +104,6 @@ realms:
 
         - non_conformal:
             gauss_labatto_quadrature: no
-            algorithm_type: dg
             current_normal: yes
 
     boundary_conditions:

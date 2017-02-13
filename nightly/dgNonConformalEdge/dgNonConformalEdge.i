@@ -113,7 +113,6 @@ realms:
 
         - non_conformal:
             gauss_labatto_quadrature: no
-            algorithm_type: robin
 
     output:
       output_data_base_name: dgNonConformalEdge.e

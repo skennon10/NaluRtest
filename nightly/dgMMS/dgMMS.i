@@ -94,7 +94,6 @@ realms:
 
         - non_conformal:
             gauss_labatto_quadrature: no
-            algorithm_type: dg
 
     output:
       output_data_base_name: output/dgMMS.e
