@@ -128,8 +128,8 @@ realms:
             mixture_fraction: 1.0
 
         - element_source_terms:
-            momentum: [advection_diffusion, buoyancy, momentum_time_derivative, NSO_4TH_ALT]
-            continuity: [advection, density_time_derivative]
+            momentum: [momentum_time_derivative, advection_diffusion, buoyancy, NSO_4TH_ALT]
+            continuity: [density_time_derivative, advection]
             mixture_fraction: [mixture_fraction_time_derivative, NSO_4TH]
 
         - user_constants:
