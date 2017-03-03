@@ -130,7 +130,7 @@ realms:
         - element_source_terms:
             momentum: [momentum_time_derivative, advection_diffusion, buoyancy, NSO_4TH_ALT]
             continuity: [density_time_derivative, advection]
-            mixture_fraction: [mixture_fraction_time_derivative, NSO_4TH]
+            mixture_fraction: [mixture_fraction_time_derivative, advection_diffusion, NSO_4TH]
 
         - user_constants:
             gravity: [0.0,-9.81,0.0]
