@@ -162,6 +162,8 @@ realms:
     solution_options:
       name: myOptions
 
+      use_consolidated_solver_algorithm: yes
+
       mesh_motion:
 
         - name: mmBackground
@@ -197,8 +199,9 @@ realms:
             velocity: 0.0
 
         - element_source_terms:
-            momentum: NSO_2ND_KE
-            mixture_fraction: NSO_2ND_ALT
+            momentum: [lumped_momentum_time_derivative, advection_diffusion, NSO_2ND_KE]
+            continuity: advection
+            mixture_fraction: [lumped_mixture_fraction_time_derivative, advection_diffusion, NSO_2ND_ALT]
 
         - non_conformal:
             gauss_labatto_quadrature: no
