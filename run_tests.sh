@@ -395,6 +395,22 @@ cp $NaluRtestCWD/nightly/ductWedge/ductWedge_Input.norm.gold $baseGitHubCWD/runN
 ./ductWedge.sh
 
 #=============================================================================
+# ductElemWedge test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/ductElemWedge" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/ductElemWedge
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/ductElemWedge
+cp $NaluRtestCWD/nightly/ductElemWedge/ductElemWedge.i $baseGitHubCWD/runNaluRtest/nightly/ductElemWedge
+cp $NaluRtestCWD/mesh/ductwedge.g.* $baseGitHubCWD/runNaluRtest/nightly/ductElemWedge
+cp $NaluRtestCWD/xml/matches_ml_default.xml $baseGitHubCWD/runNaluRtest/nightly/ductElemWedge
+cp $NaluRtestCWD/nightly/ductElemWedge/ductElemWedge.sh $baseGitHubCWD/runNaluRtest/nightly/ductElemWedge
+cp $NaluRtestCWD/nightly/ductElemWedge/ductElemWedge.norm.gold $baseGitHubCWD/runNaluRtest/nightly/ductElemWedge
+# run it...  
+./ductElemWedge.sh
+
+#=============================================================================
 # heatedBackStep test
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/heatedBackStep" ]; then
@@ -479,6 +495,22 @@ cp $NaluRtestCWD/nightly/dgNonConformalEdgeCylinder/dgNonConformalEdgeCylinder.s
 cp $NaluRtestCWD/nightly/dgNonConformalEdgeCylinder/dgNonConformalEdgeCylinder.norm.gold $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalEdgeCylinder
 # run it...  
 ./dgNonConformalEdgeCylinder.sh
+
+#=============================================================================
+# dgNonConformalElemCylinder test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/dgNonConformalElemCylinder" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalElemCylinder
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalElemCylinder
+cp $NaluRtestCWD/nightly/dgNonConformalElemCylinder/dgNonConformalElemCylinder.i $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalElemCylinder
+cp $NaluRtestCWD/mesh/rot_cyl_14.exo* $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalElemCylinder
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalElemCylinder
+cp $NaluRtestCWD/nightly/dgNonConformalElemCylinder/dgNonConformalElemCylinder.sh $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalElemCylinder
+cp $NaluRtestCWD/nightly/dgNonConformalElemCylinder/dgNonConformalElemCylinder.norm.gold $baseGitHubCWD/runNaluRtest/nightly/dgNonConformalElemCylinder
+# run it...  
+./dgNonConformalElemCylinder.sh
 
 #=============================================================================
 # fluidsPmrChtPeriodic test
