@@ -3,6 +3,10 @@
 
 CWD=$(pwd)
 didSimulationDiffAnywhere=0
+didSimulationDiffAnywhereFirst=0
+didSimulationDiffAnywhereSecond=0
+localDiffOne=0.0;
+localDiffTwo=0.0;
 
 # determine tolerance
 testTol=0.000000000001
@@ -20,7 +24,27 @@ if [ -f $CWD/PASS_NP1 ]; then
 else
     mpiexec -np 8 ../../naluX -i cvfemHC.i -o cvfemHC.log
     determine_pass_fail $testTol "cvfemHC.log" "cvfemHC.norm" "cvfemHC.norm.gold"
-    didSimulationDiffAnywhere="$?"
+    didSimulationDiffAnywhereFirst="$?"
+    localDiffOne=$GlobalMaxSolutionDiff
+    if [ "$didSimulationDiffAnywhereFirst" -gt 0 ]; then
+        didSimulationDiffAnywhere=1
+    fi
+
+    # run the second case
+    mpiexec -np 8 ../../naluX -i cvfemHC_nodebal.i -o cvfemHC_nodebal.log
+    determine_pass_fail $testTol "cvfemHC_nodebal.log" "cvfemHC_nodebal.norm" "cvfemHC_nodebal.norm.gold"
+    didSimulationDiffAnywhereSecond="$?"
+    localDiffTwo=$GlobalMaxSolutionDiff
+    if [ "$didSimulationDiffAnywhereSecond" -gt 0 ]; then
+        didSimulationDiffAnywhere=1
+    fi
+
+    # check who is greater
+    if [ $(echo " $localDiffOne > $localDiffTwo " | bc) -eq 1 ]; then
+        GlobalMaxSolutionDiff=$localDiffOne
+    else
+        GlobalMaxSolutionDiff=$localDiffTwo
+    fi
 fi
 
 # write the file based on final status
@@ -32,11 +56,13 @@ else
 fi
 
 # report it; 30 spaces
-GlobalPerformanceTime=`grep "STKPERF: Total Time" cvfemHC.log  | awk '{print $4}'`
+GlobalPerformanceTimeFirst=`grep "STKPERF: Total Time" cvfemHC.log  | awk '{print $4}'`
+GlobalPerformanceTimeSecond=`grep "STKPERF: Total Time" cvfemHC_nodebal.log | awk '{print $4}'`
+totalPerfTime=`echo "$GlobalPerformanceTimeFirst + $GlobalPerformanceTimeSecond" | bc `
 if [ $PASS_STATUS -ne 1 ]; then
-    echo -e "..cvfemHC..................... FAILED":" " $GlobalPerformanceTime " s" " max diff: " $GlobalMaxSolutionDiff
+    echo -e "..cvfemHC..................... FAILED":" " $totalPerfTime " s" " max diff: " $GlobalMaxSolutionDiff
 else
-    echo -e "..cvfemHC..................... PASSED":" " $GlobalPerformanceTime " s"
+    echo -e "..cvfemHC..................... PASSED":" " $totalPerfTime " s"
 fi
 
 exit
