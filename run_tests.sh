@@ -782,9 +782,11 @@ fi
 
 cd $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
 cp $NaluRtestCWD/nightly/cvfemHC/cvfemHC.i $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
+cp $NaluRtestCWD/nightly/cvfemHC/cvfemHC_nodebal.i $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
 cp $NaluRtestCWD/mesh/rot_cyl_14.exo* $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
 cp $NaluRtestCWD/nightly/cvfemHC/cvfemHC.sh $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
 cp $NaluRtestCWD/nightly/cvfemHC/cvfemHC.norm.gold $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
+cp $NaluRtestCWD/nightly/cvfemHC/cvfemHC_nodebal.norm.gold $baseGitHubCWD/runNaluRtest/nightly/cvfemHC
 # run it...
 ./cvfemHC.sh
 
