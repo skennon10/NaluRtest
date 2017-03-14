@@ -121,6 +121,23 @@ cp $NaluRtestCWD/nightly/steadyTaylorVortex/steadyTaylorVortex.norm.gold $baseGi
 ./steadyTaylorVortex.sh
 
 #=============================================================================
+# steadyTaylorVortex_P4 test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex_P4" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex_P4
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex_P4
+cp $NaluRtestCWD/nightly/steadyTaylorVortex_P4/STV_P4_R*.i $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex_P4
+cp $NaluRtestCWD/nightly/steadyTaylorVortex_P4/*.g $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex_P4
+cp $NaluRtestCWD/nightly/steadyTaylorVortex_P4/muelu_STV_HO.xml $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex_P4
+cp $NaluRtestCWD/nightly/steadyTaylorVortex_P4/steadyTaylorVortex_P4.sh $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex_P4
+cp $NaluRtestCWD/nightly/steadyTaylorVortex_P4/norms.py $baseGitHubCWD/runNaluRtest/nightly/steadyTaylorVortex_P4
+
+# run it...
+./steadyTaylorVortex_P4.sh
+
+#=============================================================================
 # hoVortex test
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/hoVortex" ]; then
