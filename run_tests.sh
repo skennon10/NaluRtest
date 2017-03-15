@@ -138,6 +138,40 @@ cp $NaluRtestCWD/nightly/steadyTaylorVortex_P4/norms.py $baseGitHubCWD/runNaluRt
 ./steadyTaylorVortex_P4.sh
 
 #=============================================================================
+# cvfemHexHC_P3 test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/cvfemHexHC_P3" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/cvfemHexHC_P3
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/cvfemHexHC_P3
+cp $NaluRtestCWD/nightly/cvfemHexHC_P3/cvfemHexHC_P3_R*.i $baseGitHubCWD/runNaluRtest/nightly/cvfemHexHC_P3
+cp $NaluRtestCWD/nightly/cvfemHexHC_P3/*.g $baseGitHubCWD/runNaluRtest/nightly/cvfemHexHC_P3
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/cvfemHexHC_P3
+cp $NaluRtestCWD/nightly/cvfemHexHC_P3/cvfemHexHC_P3.sh $baseGitHubCWD/runNaluRtest/nightly/cvfemHexHC_P3
+cp $NaluRtestCWD/nightly/cvfemHexHC_P3/norms.py $baseGitHubCWD/runNaluRtest/nightly/cvfemHexHC_P3
+
+# run it...
+./cvfemHexHC_P3.sh
+
+#=============================================================================
+# variableDensMMS_P5 test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+cp $NaluRtestCWD/nightly/variableDensMMS_P5/variableDensNonUniform_P5.i $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+cp $NaluRtestCWD/nightly/variableDensMMS_P5/*.g $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+cp $NaluRtestCWD/nightly/variableDensMMS_P5/variableDensMMS_P5.sh $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+cp $NaluRtestCWD/nightly/variableDensMMS_P5/variableDensNonUniform_P5.norm.gold $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+
+# run it...
+./variableDensMMS_P5.sh
+
+#=============================================================================
 # hoVortex test
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/hoVortex" ]; then
