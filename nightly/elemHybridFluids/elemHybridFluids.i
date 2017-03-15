@@ -109,13 +109,13 @@ realms:
       name: myOptions
       turbulence_model: smagorinsky  
 
+      use_consolidated_solver_algorithm: yes
+
       options:
         - hybrid_factor:
-            velocity: 0.0 
             mixture_fraction: 1.0
 
         - alpha_upw:
-            velocity: 1.0 
             mixture_fraction: 1.0
 
         - laminar_schmidt:
@@ -123,6 +123,11 @@ realms:
 
         - turbulent_schmidt:
             mixture_fraction: 1.0
+
+        - element_source_terms:
+            momentum: [lumped_momentum_time_derivative, advection_diffusion]
+            continuity: [advection]
+            mixture_fraction: [lumped_mixture_fraction_time_derivative, upw_advection_diffusion]
           
     output:
       output_data_base_name: output.e
