@@ -171,7 +171,7 @@ realms:
 
     output:
       serialized_io_group_size: 2
-      output_data_base_name: heliumPlumeEdge.e
+      output_data_base_name: heliumPlume.e
       output_frequency: 4 
       output_node_set: no
       compression_level: 9
@@ -191,7 +191,7 @@ realms:
        - reynolds_stress
 
     restart:
-      restart_data_base_name: heliumPlumeEdge.rst
+      restart_data_base_name: heliumPlume.rst
       restart_frequency: 2 
       restart_start: 2
       compression_level: 9

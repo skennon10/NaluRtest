@@ -37,5 +37,5 @@ Re-running the run_test.sh script will check if directories are already in exist
 	..fluidsPmrChtPeriodic........ PASSED
 	..edgePipeCHT................. PASSED
 	..elemBackStepLRSST........... FAILED
-	..heliumPlumeEdge............. PASSED
+	..heliumPlume................. PASSED
 	Rtest End

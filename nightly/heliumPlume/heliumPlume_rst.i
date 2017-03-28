@@ -36,7 +36,7 @@ linear_solvers:
 realms:
 
   - name: realm_1
-    mesh:  heliumPlumeEdge.rst
+    mesh:  heliumPlume.rst
     use_edges: no
     support_inconsistent_multi_state_restart: yes
 
@@ -183,7 +183,7 @@ realms:
 
     output:
       serialized_io_group_size: 2
-      output_data_base_name: heliumPlumeElem_rst.e
+      output_data_base_name: heliumPlume_rst.e
       output_frequency: 2
       output_node_set: no
       output_variables:
@@ -207,7 +207,7 @@ realms:
        - lambda_ci
 
     restart:
-      restart_data_base_name: heliumPlumeElem_B.rst
+      restart_data_base_name: heliumPlume_B.rst
       restart_frequency: 2 
       restart_time: 0.10
 
