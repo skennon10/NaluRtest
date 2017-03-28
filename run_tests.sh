@@ -520,13 +520,13 @@ if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/heliumPlume" ]; then
 fi
 
 cd $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
-cp $NaluRtestCWD/nightly/heliumPlume/heliumPlumeEdge.i $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
-cp $NaluRtestCWD/nightly/heliumPlume/heliumPlumeElem_rst.i $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
+cp $NaluRtestCWD/nightly/heliumPlume/heliumPlume.i $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
+cp $NaluRtestCWD/nightly/heliumPlume/heliumPlume_rst.i $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
 cp $NaluRtestCWD/nightly/heliumPlume/*.g.* $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
 cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
 cp $NaluRtestCWD/nightly/heliumPlume/heliumPlume.sh $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
-cp $NaluRtestCWD/nightly/heliumPlume/heliumPlumeEdge.norm.gold $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
-cp $NaluRtestCWD/nightly/heliumPlume/heliumPlumeElem_rst.norm.gold $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
+cp $NaluRtestCWD/nightly/heliumPlume/heliumPlume.norm.gold $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
+cp $NaluRtestCWD/nightly/heliumPlume/heliumPlume_rst.norm.gold $baseGitHubCWD/runNaluRtest/nightly/heliumPlume
 
 # run it...  
 ./heliumPlume.sh
