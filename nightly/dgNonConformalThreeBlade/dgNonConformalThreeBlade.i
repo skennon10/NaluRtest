@@ -189,6 +189,7 @@ realms:
             gauss_labatto_quadrature: no
             upwind_advection: yes
             current_normal: yes
+            include_png_penalty: yes
 
         - consistent_mass_matrix_png:
             pressure: yes
