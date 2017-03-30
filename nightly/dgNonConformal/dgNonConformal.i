@@ -114,6 +114,7 @@ realms:
 
         - non_conformal:
             gauss_labatto_quadrature: yes
+            activate_coincident_node_error_check: yes
 
     output:
       output_data_base_name: dgNonConformal.e
