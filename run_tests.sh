@@ -172,6 +172,23 @@ cp $NaluRtestCWD/nightly/variableDensMMS_P5/variableDensNonUniform_P5.norm.gold 
 ./variableDensMMS_P5.sh
 
 #=============================================================================
+# kovasznay_P7 test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/kovasznay_P7" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/kovasznay_P7
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/kovasznay_P7
+cp $NaluRtestCWD/nightly/kovasznay_P7/kovasznay_P7.i $baseGitHubCWD/runNaluRtest/nightly/kovasznay_P7
+cp $NaluRtestCWD/nightly/kovasznay_P7/*.g $baseGitHubCWD/runNaluRtest/nightly/kovasznay_P7
+cp $NaluRtestCWD/nightly/kovasznay_P7/muelu_kovasznay_p7.xml $baseGitHubCWD/runNaluRtest/nightly/kovasznay_P7
+cp $NaluRtestCWD/nightly/kovasznay_P7/kovasznay_P7.sh $baseGitHubCWD/runNaluRtest/nightly/kovasznay_P7
+cp $NaluRtestCWD/nightly/kovasznay_P7/kovasznay_P7.norm.gold $baseGitHubCWD/runNaluRtest/nightly/kovasznay_P7
+
+# run it...
+./kovasznay_P7.sh
+
+#=============================================================================
 # hoVortex test
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/hoVortex" ]; then
