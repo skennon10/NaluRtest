@@ -80,7 +80,7 @@ dimension = 2
 numResolution = 3
 minP = 4
 maxP = 4
-base_name = 'STV'
+base_name = 'steadyTaylorVortex'
 
 min_allowed_ooas = {'dpdx[0]': -3.0, 'dpdx[1]': -3.0,
                     'velocity[0]': -5.0, 'velocity[1]': -5.0}
