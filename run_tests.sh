@@ -825,21 +825,38 @@ cp $NaluRtestCWD/nightly/heatedWaterChannel/heatedWaterChannelEdgeRst.norm.gold*
 ./heatedWaterChannel.sh
 
 #=============================================================================
-# variableDensMMS test (edge and element)
+# variableDensNonIso test
 #=============================================================================
-if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/variableDensMMS" ]; then
-    mkdir $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/variableDensNonIso" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/variableDensNonIso
 fi
 
-cd $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS
-cp $NaluRtestCWD/nightly/variableDensMMS/*.i $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS
-cp $NaluRtestCWD/nightly/variableDensMMS/*.g $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS
-cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS
-cp $NaluRtestCWD/nightly/variableDensMMS/variableDensMMS.sh $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS
-cp $NaluRtestCWD/nightly/variableDensMMS/*.norm.gold $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS
+cd $baseGitHubCWD/runNaluRtest/nightly/variableDensNonIso
+cp $NaluRtestCWD/nightly/variableDensNonIso/*.i $baseGitHubCWD/runNaluRtest/nightly/variableDensNonIso
+cp $NaluRtestCWD/mesh/3D_50.g $baseGitHubCWD/runNaluRtest/nightly/variableDensNonIso
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/variableDensNonIso
+cp $NaluRtestCWD/nightly/variableDensNonIso/variableDensNonIso.sh $baseGitHubCWD/runNaluRtest/nightly/variableDensNonIso
+cp $NaluRtestCWD/nightly/variableDensNonIso/*.norm.gold $baseGitHubCWD/runNaluRtest/nightly/variableDensNonIso
 
 # run it...  
-./variableDensMMS.sh
+./variableDensNonIso.sh
+
+#=============================================================================
+# variableDensNonUniform test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform
+cp $NaluRtestCWD/nightly/variableDensNonUniform/*.i $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform
+cp $NaluRtestCWD/mesh/3D_50.g $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform
+cp $NaluRtestCWD/nightly/variableDensNonUniform/variableDensNonUniform.sh $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform
+cp $NaluRtestCWD/nightly/variableDensNonUniform/*.norm.gold $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform
+
+# run it...  
+./variableDensNonUniform.sh
 
 #=============================================================================
 # actuatorLine test
