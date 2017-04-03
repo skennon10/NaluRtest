@@ -29,7 +29,7 @@ linear_solvers:
 realms:
 
   - name: realm_1
-    mesh: tquad4_16.g
+    mesh: tquad4_32.g
     use_edges: no
     polynomial_order: 4
     automatic_decomposition_type: rcb     
@@ -118,7 +118,7 @@ realms:
 
     solution_norm:
       output_frequency: 75
-      file_name: STV_P4_R0.dat
+      file_name: steadyTaylorVortex_P4_R1.dat
       spacing: 12
       percision: 6
       target_name: block_1
@@ -127,7 +127,7 @@ realms:
        - [dpdx, SteadyTaylorVortexGradPressure]
 
     output:
-      output_data_base_name: STV_P4_R0.e
+      output_data_base_name: steadyTaylorVortex_P4_R1.e
       output_frequency: 75
       output_node_set: no 
       output_variables:
@@ -142,7 +142,7 @@ Time_Integrators:
       name: ti_1
       start_time: 0
       termination_step_count: 75
-      time_step: 25.0e-4
+      time_step: 12.5e-4
       time_stepping_type: fixed 
       time_step_count: 0
       second_order_accuracy: yes

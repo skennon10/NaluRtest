@@ -118,7 +118,7 @@ realms:
 
     solution_norm:
       output_frequency: 75
-      file_name: STV_P4_R2.dat
+      file_name: steadyTaylorVortex_P4_R2.dat
       spacing: 12
       percision: 6
       target_name: block_1
@@ -127,7 +127,7 @@ realms:
        - [dpdx, SteadyTaylorVortexGradPressure]
 
     output:
-      output_data_base_name: STV_P4_R2.e
+      output_data_base_name: steadyTaylorVortex_P4_R2.e
       output_frequency: 75
       output_node_set: no 
       output_variables:
