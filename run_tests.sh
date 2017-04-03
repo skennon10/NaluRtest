@@ -155,21 +155,21 @@ cp $NaluRtestCWD/nightly/cvfemHexHC_P3/norms.py $baseGitHubCWD/runNaluRtest/nigh
 ./cvfemHexHC_P3.sh
 
 #=============================================================================
-# variableDensMMS_P5 test
+# variableDensNonUniform_P5 test
 #=============================================================================
-if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5" ]; then
-    mkdir $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform_P5" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform_P5
 fi
 
-cd $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
-cp $NaluRtestCWD/nightly/variableDensMMS_P5/variableDensNonUniform_P5.i $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
-cp $NaluRtestCWD/nightly/variableDensMMS_P5/*.g $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
-cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
-cp $NaluRtestCWD/nightly/variableDensMMS_P5/variableDensMMS_P5.sh $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
-cp $NaluRtestCWD/nightly/variableDensMMS_P5/variableDensNonUniform_P5.norm.gold $baseGitHubCWD/runNaluRtest/nightly/variableDensMMS_P5
+cd $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform_P5
+cp $NaluRtestCWD/nightly/variableDensNonUniform_P5/variableDensNonUniform_P5.i $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform_P5
+cp $NaluRtestCWD/nightly/variableDensNonUniform_P5/*.g $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform_P5
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform_P5
+cp $NaluRtestCWD/nightly/variableDensNonUniform_P5/variableDensNonUniform_P5.sh $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform_P5
+cp $NaluRtestCWD/nightly/variableDensNonUniform_P5/variableDensNonUniform_P5.norm.gold $baseGitHubCWD/runNaluRtest/nightly/variableDensNonUniform_P5
 
 # run it...
-./variableDensMMS_P5.sh
+./variableDensNonUniform_P5.sh
 
 #=============================================================================
 # kovasznay_P7 test
