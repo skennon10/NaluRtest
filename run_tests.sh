@@ -804,25 +804,43 @@ cp $NaluRtestCWD/nightly/milestoneRun/milestoneRun.norm.gold* $baseGitHubCWD/run
 ./milestoneRun.sh
 
 #=============================================================================
-# heatedWaterChannel test
+# heatedWaterChannelEdge test
 #=============================================================================
-if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel" ]; then
-    mkdir $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
 fi
 
-cd $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/nightly/heatedWaterChannel/heatedWaterChannelEdge.i $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/nightly/heatedWaterChannel/heatedWaterChannelElem.i $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/nightly/heatedWaterChannel/heatedWaterChannelEdgeRst.i $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/nightly/heatedWaterChannel/*.g.* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/xml/milestone_aspect_ratio.xml $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/nightly/heatedWaterChannel/heatedWaterChannel.sh $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/nightly/heatedWaterChannel/heatedWaterChannelEdge.norm.gold* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/nightly/heatedWaterChannel/heatedWaterChannelElem.norm.gold* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
-cp $NaluRtestCWD/nightly/heatedWaterChannel/heatedWaterChannelEdgeRst.norm.gold* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannel
+cd $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+cp $NaluRtestCWD/nightly/heatedWaterChannelEdge/heatedWaterChannelEdge.i $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+cp $NaluRtestCWD/nightly/heatedWaterChannelEdge/heatedWaterChannelEdge_rst.i $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+cp $NaluRtestCWD/mesh/waterChannel_mks.g.* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+cp $NaluRtestCWD/xml/milestone_aspect_ratio.xml $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+cp $NaluRtestCWD/nightly/heatedWaterChannelEdge/heatedWaterChannelEdge.sh $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+cp $NaluRtestCWD/nightly/heatedWaterChannelEdge/heatedWaterChannelEdge.norm.gold* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+cp $NaluRtestCWD/nightly/heatedWaterChannelEdge/heatedWaterChannelEdge_rst.norm.gold* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelEdge
+
 # run it...  
-./heatedWaterChannel.sh
+./heatedWaterChannelEdge.sh
+
+#=============================================================================
+# heatedWaterChannelElem test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem
+cp $NaluRtestCWD/nightly/heatedWaterChannelElem/heatedWaterChannelElem.i $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem
+cp $NaluRtestCWD/mesh/waterChannel_mks.g.* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem
+cp $NaluRtestCWD/xml/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem
+cp $NaluRtestCWD/xml/milestone_aspect_ratio.xml $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem
+cp $NaluRtestCWD/nightly/heatedWaterChannelElem/heatedWaterChannelElem.sh $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem
+cp $NaluRtestCWD/nightly/heatedWaterChannelElem/heatedWaterChannelElem.norm.gold* $baseGitHubCWD/runNaluRtest/nightly/heatedWaterChannelElem
+
+# run it...  
+./heatedWaterChannelElem.sh
+
 
 #=============================================================================
 # variableDensNonIso test
