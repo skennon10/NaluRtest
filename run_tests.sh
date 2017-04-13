@@ -46,6 +46,23 @@ fi
 cp $NaluRtestCWD/pass_fail.sh $baseGitHubCWD/runNaluRtest
 
 #=============================================================================
+# nonConformalWithPeriodic test
+#=============================================================================
+if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/nonConformalWithPeriodic" ]; then
+    mkdir $baseGitHubCWD/runNaluRtest/nightly/nonConformalWithPeriodic
+fi
+
+cd $baseGitHubCWD/runNaluRtest/nightly/nonConformalWithPeriodic
+cp $NaluRtestCWD/nightly/nonConformalWithPeriodic/nonConformalWithPeriodic.i $baseGitHubCWD/runNaluRtest/nightly/nonConformalWithPeriodic
+# special version of milestone.xml with smaller coarse size
+cp $NaluRtestCWD/nightly/nonConformalWithPeriodic/milestone.xml $baseGitHubCWD/runNaluRtest/nightly/nonConformalWithPeriodic
+cp $NaluRtestCWD/mesh/nonconformal_2blk_2D.g* $baseGitHubCWD/runNaluRtest/nightly/nonConformalWithPeriodic
+cp $NaluRtestCWD/nightly/nonConformalWithPeriodic/nonConformalWithPeriodic.sh $baseGitHubCWD/runNaluRtest/nightly/nonConformalWithPeriodic
+cp $NaluRtestCWD/nightly/nonConformalWithPeriodic/nonConformalWithPeriodic.norm.gold $baseGitHubCWD/runNaluRtest/nightly/nonConformalWithPeriodic
+# run it...  
+./nonConformalWithPeriodic.sh
+
+#=============================================================================
 # periodic3dElem test
 #=============================================================================
 if [ ! -d "$baseGitHubCWD/runNaluRtest/nightly/periodic3dElem" ]; then
@@ -1011,6 +1028,7 @@ cp $NaluRtestCWD/nightly/dgMMS/dgMMS.norm.gold $baseGitHubCWD/runNaluRtest/night
 
 # run it...  
 ./dgMMS.sh
+
 
 #=============================================================================
 # unit tests
